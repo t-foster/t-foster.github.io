@@ -14,11 +14,13 @@ The test triangle:
 
 ![Test Triangle with modifications](pictures/ModifiedTestTriangle.png)
 
-London Vs Detroit:
+Part of talking about automated testing is making sure that everyone is on the same page.  Ideally with automated tests you should have a bunch of unit tests testing individual functions and all their edge cases, Integration tests making sure that different functions and classes work together in an expected way, and End to End tests working your software the way end users do.
+
+London Vs Detroit schools of testing:
 
 ![London Vs Detroit](pictures/LondonVsDetroit.png)
 
-TODO add modified testing pyramid and london/detroit testing schools pictures.
+With unit and integration tests, there are a few different schools of thought.  Should a test case target a single function or can one test case exercise multiple pieces of code?  The answer to that question is "it depends", it depends on the code you are trying to test, what that code does, how interconnected it is, what programmign language you are using and probably a dozen other things.
 
 Here are my steps for success:
 
@@ -38,10 +40,12 @@ Here are my steps for success:
         * Unit test main function
     * Tests
         * Test framework complexity
-        * Lack of experience
-        * Unique syntax
+        * Lack of experience with writing testing code
+        * The Unique syntax frameworks use
+            * What even is `EXPECT_EQ`?
 2. Choose a unit testing framework
-    * Unit testing frameworks make testing easier
+    * Unit testing frameworks make testing easier.
+        * They provide the glue so you can write tests 
     * Ask the other developers what ones they have used before
     * Find a survey where developers tell what framework they use
         * [Jetbrains Developer Ecosystem 2023 is excellent for this](https://www.jetbrains.com/lp/devecosystem-2023/)
@@ -57,7 +61,7 @@ Here are my steps for success:
         * Coworker, course, blog, Youtube/conference talk?
 4. Wire up test infrastructure
     * Makefiles
-    * unit test main functionality
+    * Unit test main function
     * Run scripts
     * Code coverage
     * Share initial tests with your coworkers
@@ -88,9 +92,11 @@ Here are my steps for success:
 
 * Testing side benefits and options
     * Accurate SLOC/Coverage
+        * initial numbers may not be good but the rate of improvement is great
     * Feedback from customers/manual testing to automated testing
     * Test Driven Development (TDD)
-    * Bisect when problem was introduced
+        * You can't do TDD if you don't even have tests.  I want my people to have this option.
+    * Bisect when a problem was introduced
     * Performance Profiling
     * Dynamic Analysis
         * Code sanitizers
@@ -98,9 +104,13 @@ Here are my steps for success:
             * Address violations
             * Memory leaks
             * Thread safety
+            * Write thetests first, prove their usefulness, then enable sanitizers and be terrified that your code does some jank stuff.
         * Valgrind
     * Fuzz testing
+        * Unit and integration testing are a useful first step for starting with fuzz testing.  
+        * You can recreate fuzz testing findings in a unit test to have them persist
     * Mutation testing
+        * Invert an if statement and see if your test cases fail, some tools can do this in an automated fashion.
 * Lessons learned
     * Set up Continuous integration / Continuous Deployment
     * If you make changes to test case infrastructure, change a test cases to intentionally fail and verify that the build still fails
@@ -110,6 +120,6 @@ Here are my steps for success:
         * Write scripts to run each test case individually
         * Write scripts to find test case interdependencies
             * Find a test shuffle seed which induces failures reliably, then bisect to find which other cases induce the failure
-    * Have contractors deliver their test cases
+    * Have contractors deliver their test cases with their code
     * Brag about testing improvements
-        * Why do you think I am writing this
+        * Why do you think I am writing this.  I am proud of what my people have done.  We have achieved a massive organizational change from the bottom up.
