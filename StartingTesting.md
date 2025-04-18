@@ -77,9 +77,28 @@ Here are my steps for success:
     * Add first simple test cases for every class
     * Peer program with coworkers to add tests for their issues
     * Cherry pick new hires first issues to be testable
-* Testing side benefits
+* Testing side benefits and options
     * Accurate SLOC/Coverage
     * Feedback from customers/manual testing to automated testing
+    * Test Driven Development (TDD)
+    * Bisect when problem was introduced
+    * Performance Profiling
+    * Dynamic Analysis
+        * Code sanitizers
+            * Undefined behavior
+            * Address violations
+            * Memory leaks
+            * Thread safety
+        * Valgrind
+    * Fuzz testing
+    * Mutation testing
 * Lessons learned
     * Set up Continuous integration / Continuous Deployment
-    * 
+    * If you make changes to scripts/makefiles, change a test cases to intentionally fail and verify that the build still fails
+    * Isolate test cases properly
+        * Write scripts to run each test case individually
+        * Write scripts to find test case interdependencies
+            * Find a test shuffle seed which induces failures reliably, then bisect to find which other cases induce the failure
+    * Have contractors deliver their test cases
+    * Brag about testing improvements
+        * Why do you think I am writing this
