@@ -8,7 +8,15 @@ Last year, at a software conference session Q&A, someone else asked a really goo
 
 Jump to about 59 minutes in that video to hear when it is asked and for the response.
 
-I was in the audience there and I really liked this question.  I have dealt with this situation before.  Working in a legacy code base with only manual testing, then adding the first few automated unit and integration tests.
+I was in the audience there and I really liked this question.  I have dealt with this situation before.  Working in a legacy code base with only manual testing, then adding the first few automated unit and integration tests.  Then eventually changing the culture of the organization to be more test first.
+
+The test triangle:
+
+![Test Triangle with modifications](pictures/ModifiedTestTriangle.png)
+
+London Vs Detroit:
+
+![London Vs Detroit](pictures/LondonVsDetroit.png)
 
 TODO add modified testing pyramid and london/detroit testing schools pictures.
 
@@ -65,7 +73,7 @@ Here are my steps for success:
         * Coding without tests introduces risks
         * Testing will prevent regressions with the existing code
     * Developers that do not know better
-        * Fresh from college or converts from other industries or engineering backgrounds that do not know how 
+        * Fresh from college or converts from other industries or engineering backgrounds that do not know how to write automated tests
         * Help show them how to test their code
     * Developers that should know better
         * Have been developing since before surge in testing popularity
