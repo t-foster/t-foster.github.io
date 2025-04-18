@@ -77,6 +77,7 @@ Here are my steps for success:
     * Add first simple test cases for every class
     * Peer program with coworkers to add tests for their issues
     * Cherry pick new hires first issues to be testable
+
 * Testing side benefits and options
     * Accurate SLOC/Coverage
     * Feedback from customers/manual testing to automated testing
@@ -94,7 +95,9 @@ Here are my steps for success:
     * Mutation testing
 * Lessons learned
     * Set up Continuous integration / Continuous Deployment
-    * If you make changes to scripts/makefiles, change a test cases to intentionally fail and verify that the build still fails
+    * If you make changes to test case infrastructure, change a test cases to intentionally fail and verify that the build still fails
+        * Common example is once you have enough tests that an early failure scrolls off your terminal, so you add a pipe to tee command so that the logs get saved off, but the pipe quietly ignores the return value from the tests failing.  So the failure does not propagate properly.  Then later on a real failure starts occurring and you do not know about it.
+        * If you already have tests and are reading this for pure curiousity, go invert a test assertion so the test case fails, then see if the failure propagates properly to stop the build.
     * Isolate test cases properly
         * Write scripts to run each test case individually
         * Write scripts to find test case interdependencies
