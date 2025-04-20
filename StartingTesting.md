@@ -10,6 +10,8 @@ Jump to about 59 minutes in that video to hear when it is asked and for the resp
 
 I was in the audience there and I really liked this question.  I have dealt with this situation before.  Working in a legacy code base with only manual testing, then adding the first few automated unit and integration tests.  Then eventually changing the culture of the organization to be more test first.
 
+Getting the first few tests can be quite difficult. 
+
 The test triangle:
 
 ![Test Triangle with modifications](pictures/ModifiedTestTriangle.png)
@@ -59,6 +61,7 @@ Here are my steps for success:
     * Follow simple Assemble, Act, Assert
     * Find a guide for your testing framework
         * Coworker, course, blog, Youtube/conference talk?
+    * These tests should be effectively trivial, if you were to write them in a few months once you have a bunch of tests they would be done in an hour.
 4. Wire up test infrastructure
     * Makefiles
     * Unit test main function
@@ -122,4 +125,21 @@ Here are my steps for success:
             * Find a test shuffle seed which induces failures reliably, then bisect to find which other cases induce the failure
     * Have contractors deliver their test cases with their code
     * Brag about testing improvements
+        * Tell me what I am doing wrong
         * Why do you think I am writing this.  I am proud of what my people have done.  We have achieved a massive organizational change from the bottom up.
+* Situations encountered
+    * You chose the wrong testing framework
+        * Those tests are still valid
+        * Converting frameworks is often a change in syntax
+    * You broke something external
+        * Either down the hall or something really external
+        * Simplify a test case and give it to them
+        * They can add it to their test collection and know when your issue is fixed
+    * Managers inspired to have developers begin testing
+        * Give developers permission and guidance
+        * May need to break code and practices to get testing to persist
+* Can manual testing go away?
+    * Probably not
+    * defense in depth is needed
+    * Sometimes a human eye is needed
+    * Automated tests help prevent regressions and wasting the manual testers time.
