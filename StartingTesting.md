@@ -1,4 +1,4 @@
-Testing:
+Starting Testing:
 
 Last year, at a software conference session Q&A, someone else asked a really good question.
 
@@ -16,7 +16,7 @@ The test triangle:
 
 ![Test Triangle with modifications](pictures/ModifiedTestTriangle.png)
 
-Part of talking about automated testing is making sure that everyone is on the same page.  Ideally with automated tests you should have a bunch of unit tests testing individual functions and all their edge cases, Integration tests making sure that different functions and classes work together in an expected way, and End to End tests working your software the way end users do.
+Part of talking about automated testing is making sure that everyone is on the same page.  Ideally with automated tests you should have a bunch of unit tests, each testing individual functions and all their edge cases.  Integration tests making sure that different functions and classes work together in an expected way, and End to End tests working your software the way end users do.
 
 London Vs Detroit schools of testing:
 
@@ -52,21 +52,23 @@ Here are my steps for success:
     * Find a survey where developers tell what framework they use
         * [Jetbrains Developer Ecosystem 2023 is excellent for this](https://www.jetbrains.com/lp/devecosystem-2023/)
         * [c++ section](https://www.jetbrains.com/lp/devecosystem-2023/cpp/#cpp_unittesting_two_years)
-    * Do not home make your own testing framework.  If you were not able to get testing beforehand, what makes you think you can maintain a custom testing framework?
-    * Just pick a framework.  My recommendation is to pick the most popular one
+    * Do not home make your own testing framework.  If you were not able to get testing started before, what makes you think you can maintain a custom testing framework?
+    * Just pick a framework.  My recommendation is to pick the most popular one for your programming language.
 3. Start with a simple unit test
     * Test a simple function or class
         * Setters and Getters
-        * Simple function with well defined inputs and outputs
+        * Or a simple function with well defined inputs and outputs
     * Follow simple Assemble, Act, Assert
     * Find a guide for your testing framework
         * Coworker, course, blog, Youtube/conference talk?
-    * These tests should be effectively trivial, if you were to write them in a few months once you have a bunch of tests they would be done in an hour.
+    * These tests should be effectively trivial, if you were to write them in a few months once you have a bunch of tests they would be done really quickly.
+    * The whole point of the first tests being simple is to have them not be a blocker for wiring of the test infrastructure.
 4. Wire up test infrastructure
     * Makefiles
     * Unit test main function
     * Run scripts
     * Code coverage
+    * et cetera
     * Share initial tests with your coworkers
 5. Test the most difficult code you have
     * This code is likely tightly coupled with other code in your project
@@ -90,8 +92,10 @@ Here are my steps for success:
         * Some developers may need a direct order to write tests
 7. Enable testing everywhere
     * Add first simple test cases for every class
+        * This way developers cant use the lazy excuse "There were not any test cases for me to copy/paste from"
     * Peer program with coworkers to add tests for their issues
     * Cherry pick new hires first issues to be testable
+        * These issues do not need to be adding new functionality, they can be written for the purpose of increasing code coverage.
 
 * Testing side benefits and options
     * Accurate SLOC/Coverage
@@ -101,14 +105,16 @@ Here are my steps for success:
         * You can't do TDD if you don't even have tests.  I want my people to have this option.
     * Bisect when a problem was introduced
     * Performance Profiling
+        * Find the slow points by tests
     * Dynamic Analysis
         * Code sanitizers
             * Undefined behavior
             * Address violations
             * Memory leaks
             * Thread safety
-            * Write thetests first, prove their usefulness, then enable sanitizers and be terrified that your code does some jank stuff.
+            * Write the tests first, prove their usefulness, then enable sanitizers and be terrified that your code does some jank stuff.  There are probably some testisms with uninitialized variables that need to be set.
         * Valgrind
+            * Find memory leaks
     * Fuzz testing
         * Unit and integration testing are a useful first step for starting with fuzz testing.  
         * You can recreate fuzz testing findings in a unit test to have them persist
@@ -127,7 +133,7 @@ Here are my steps for success:
     * Brag about testing improvements
         * Tell me what I am doing wrong
         * Why do you think I am writing this.  I am proud of what my people have done.  We have achieved a massive organizational change from the bottom up.
-* Situations encountered
+* Situations encountered:
     * You chose the wrong testing framework
         * Those tests are still valid
         * Converting frameworks is often a change in syntax
@@ -140,6 +146,6 @@ Here are my steps for success:
         * May need to break code and practices to get testing to persist
 * Can manual testing go away?
     * Probably not
-    * defense in depth is needed
+    * Defense in depth is needed
     * Sometimes a human eye is needed
     * Automated tests help prevent regressions and wasting the manual testers time.
