@@ -149,3 +149,9 @@ Here are my steps for success:
     * Defense in depth is needed
     * Sometimes a human eye is needed
     * Automated tests help prevent regressions and wasting the manual testers time.
+* Tests are best started from a point of hate
+    * I hate these regressions
+    * I hate how long of a process it takes to manually test some behavior
+    * I hate that I may need to schedule special hardware time to verify a problem is fixed
+    * I hate that the manual testers had a crash occur randomly and the situation may not happen unless the stars and planets align
+    * I hate that I may not be able to confidently tell if an issue is actually fixed or not
