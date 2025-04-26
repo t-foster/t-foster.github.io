@@ -22,7 +22,7 @@ London Vs Detroit schools of testing:
 
 ![London Vs Detroit](pictures/LondonVsDetroit.png)
 
-With unit and integration tests, there are a few different schools of thought.  Should a test case target a single function or can one test case exercise multiple pieces of code?  The answer to that question is "it depends", it depends on the code you are trying to test, what that code does, how interconnected it is, what programmign language you are using and probably a dozen other things.
+With unit and integration tests, there are a few different schools of thought.  Should a test case target a single function or can one test case exercise multiple pieces of code?  The answer to that question is "it depends", it depends on the code you are trying to test, what that code does, how interconnected it is, what programming language you are using and probably a dozen other things.  [More information on London Vs Detroit](https://zone84.tech/architecture/london-and-detroit-schools-of-unit-tests/)
 
 Here are my steps for success:
 
